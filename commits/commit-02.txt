@@ -1,0 +1,3 @@
+Commit 2 - add commit-02.txt
+
+Small placeholder file for commit tracking.
