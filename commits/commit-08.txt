@@ -1,0 +1,3 @@
+Commit 8 - add commit-08.txt
+
+Small placeholder file for commit tracking.
