@@ -143,63 +143,55 @@
   <body
     class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary"
   >
-    <header
-      class="fixed top-0 w-full z-50 font-inter antialiased transition-all duration-300 bg-transparent"
-    >
-      <div class="max-w-7xl mx-auto px-margin py-6 pointer-events-none">
-        <div
-          class="pointer-events-auto bg-[#1a1a1a]/90 backdrop-blur-xl rounded-full h-16 flex items-center justify-between px-2 shadow-2xl border border-white/5"
-        >
-          <!-- Left: Logo Icon -->
-          <div class="flex items-center pl-1">
-            <div
-              class="w-12 h-12 bg-white rounded-full flex items-center justify-center"
-            >
-              <span
-                class="material-symbols-outlined text-black"
-                style="font-size: 28px"
-                >public</span
-              >
-            </div>
-            <span class="text-white font-bold text-xl tracking-tighter ml-3"
-              >SHOPPIFY</span
-            >
-          </div>
-          <!-- Center: Nav Links -->
-          <nav class="hidden md:flex items-center gap-10">
+    <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
+      <nav
+        class="bg-primary-container text-white rounded-full px-8 py-4 flex items-center justify-between shadow-2xl backdrop-blur-md bg-opacity-95 border border-white/10"
+      >
+        <div class="flex items-center gap-12">
+          <a class="text-xl font-black tracking-tighter" href="#">SHOPPIFY</a>
+          <div class="hidden md:flex items-center gap-8">
             <a
-              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              class="text-sm font-semibold opacity-70 hover:opacity-100 transition-opacity"
               href="#"
               >Shop All</a
             >
-            <a
-              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
-              href="#"
+            <a class="text-sm font-bold text-secondary-container" href="#"
               >Collections</a
             >
             <a
-              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              class="text-sm font-semibold opacity-70 hover:opacity-100 transition-opacity"
               href="#"
               >New Arrivals</a
             >
             <a
-              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              class="text-sm font-semibold opacity-70 hover:opacity-100 transition-opacity"
               href="#"
               >Sale</a
             >
-          </nav>
-          <!-- Right: Contact Button -->
-          <div class="pr-1">
-            <a
-              class="bg-white text-black font-semibold text-body-md px-8 h-12 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors"
-              href="mailto:ihyaet@gmail.com"
-            >
-              ihyaet@gmail.com
-            </a>
           </div>
         </div>
-      </div>
-    </header>
+        <div class="flex items-center gap-6">
+          <button
+            class="hidden lg:flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest"
+          >
+            <span class="material-symbols-outlined text-sm">mail</span>
+            Subscribe
+          </button>
+          <div class="flex items-center gap-4">
+            <button
+              class="material-symbols-outlined opacity-70 hover:opacity-100 transition-opacity"
+            >
+              search
+            </button>
+            <button
+              class="material-symbols-outlined opacity-70 hover:opacity-100 transition-opacity"
+            >
+              shopping_bag
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
     <main class="pb-xl">
       <!-- High-Impact Hero Carousel -->
       <section
