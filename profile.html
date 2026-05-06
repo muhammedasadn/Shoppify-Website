@@ -1,0 +1,490 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shoppify - User Profile</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#eff4ff",
+              "on-surface-variant": "#45464d",
+              "on-tertiary-container": "#818486",
+              "surface-container-high": "#dce9ff",
+              "tertiary-fixed": "#e0e3e5",
+              tertiary: "#000000",
+              "tertiary-fixed-dim": "#c4c7c9",
+              "primary-fixed-dim": "#bec6e0",
+              "surface-container-highest": "#d3e4fe",
+              "on-tertiary-fixed": "#191c1e",
+              "on-error-container": "#93000a",
+              "on-background": "#0b1c30",
+              "primary-fixed": "#dae2fd",
+              "inverse-on-surface": "#eaf1ff",
+              "surface-variant": "#d3e4fe",
+              "surface-tint": "#565e74",
+              "inverse-surface": "#213145",
+              "surface-container-lowest": "#ffffff",
+              outline: "#76777d",
+              "secondary-fixed": "#ffdbcc",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#3f465c",
+              "surface-bright": "#f8f9ff",
+              "outline-variant": "#c6c6cd",
+              "on-tertiary": "#ffffff",
+              surface: "#f8f9ff",
+              "on-error": "#ffffff",
+              "surface-dim": "#cbdbf5",
+              "tertiary-container": "#191c1e",
+              background: "#f8f9ff",
+              "on-secondary-fixed-variant": "#7a3000",
+              "secondary-container": "#fe6b00",
+              "primary-container": "#131b2e",
+              primary: "#000000",
+              "on-surface": "#0b1c30",
+              error: "#ba1a1a",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#ffb693",
+              "on-primary-container": "#7c839b",
+              "on-tertiary-fixed-variant": "#444749",
+              "on-secondary-fixed": "#351000",
+              "on-secondary-container": "#572000",
+              "inverse-primary": "#bec6e0",
+              secondary: "#a04100",
+              "surface-container": "#e5eeff",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#131b2e",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              base: "8px",
+              lg: "48px",
+              sm: "12px",
+              margin: "32px",
+              md: "24px",
+              xs: "4px",
+              xl: "80px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "display-xl": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-md": ["Inter"],
+              "headline-lg": ["Inter"],
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "display-xl": [
+                "60px",
+                {
+                  lineHeight: "72px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-sm": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-lg": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background font-body-md text-on-background min-h-screen flex flex-col"
+  >
+    <!-- TopNavBar -->
+    <header
+      class="fixed top-0 w-full z-50 font-inter antialiased transition-all duration-300 bg-transparent"
+    >
+      <div class="max-w-7xl mx-auto px-margin py-6 pointer-events-none">
+        <div
+          class="pointer-events-auto bg-[#1a1a1a]/90 backdrop-blur-xl rounded-full h-16 flex items-center justify-between px-2 shadow-2xl border border-white/5"
+        >
+          <!-- Left: Logo Icon -->
+          <div class="flex items-center pl-1">
+            <div
+              class="w-12 h-12 bg-white rounded-full flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-black"
+                style="font-size: 28px"
+                >public</span
+              >
+            </div>
+            <span class="text-white font-bold text-xl tracking-tighter ml-3"
+              >SHOPPIFY</span
+            >
+          </div>
+          <!-- Center: Nav Links -->
+          <nav class="hidden md:flex items-center gap-10">
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >Shop All</a
+            >
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >Collections</a
+            >
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >New Arrivals</a
+            >
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >Sale</a
+            >
+          </nav>
+          <!-- Right: Contact Button -->
+          <div class="pr-1">
+            <a
+              class="bg-white text-black font-semibold text-body-md px-8 h-12 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors"
+              href="mailto:ihyaet@gmail.com"
+            >
+              ihyaet@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="flex-grow pt-32 pb-xl px-8 max-w-7xl mx-auto w-full">
+      <header class="mb-lg">
+        <h1 class="font-display-xl text-display-xl text-on-surface">
+          Account Overview
+        </h1>
+      </header>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <!-- Left Column: Profile & Addresses (Bento Style) -->
+        <div class="lg:col-span-4 flex flex-col gap-md">
+          <!-- Profile Card -->
+          <div
+            class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-container-high flex flex-col items-center text-center"
+          >
+            <img
+              alt="User Avatar"
+              class="w-32 h-32 rounded-full object-cover mb-sm border-4 border-surface"
+              data-alt="A professional, high-quality studio portrait of a confident young woman looking directly at the camera. The lighting is soft yet bright, creating a clean, modern aesthetic with crisp shadows. The background is a stark, minimal white that perfectly aligns with a high-end retail interface design. The overall mood is sophisticated, energetic, and highly trustworthy, fitting seamlessly into a premium e-commerce platform."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9slzt1ZuvvBHn1_waW1CTP7ZstFWQLJ3PX3-7fHor1OZZUf1ZnI4N5GznTQeIZhvL3scuZjcKMs2DPIXiMAPAxFN6iWjYqlpnCH6FI6gvu1rI0g0bCe3vcVlgRgqULJ_1mMT0T8F9YzgkOqJlimO6aT5pA8N84KfERJAA7h1jMr6xutZhITGFVOeub5TJXiZgfqaOrB_8UpZyJjp0HeMlsmvZJBHcdMTba4wBX5wlDfvVrk66WfgxXzGlCb42xqPt0mn8LjW0SVc"
+            />
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-xs">
+              Alex Morgan
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-md">
+              alex.morgan@example.com
+            </p>
+            <button
+              class="w-full py-sm bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:bg-inverse-surface hover:text-surface-container-lowest transition-colors flex items-center justify-center gap-xs"
+            >
+              <span class="material-symbols-outlined text-[18px]">edit</span>
+              Edit Profile
+            </button>
+          </div>
+          <!-- Saved Addresses -->
+          <div
+            class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-container-high"
+          >
+            <div class="flex justify-between items-center mb-md">
+              <h3 class="font-headline-md text-headline-md text-on-surface">
+                Saved Addresses
+              </h3>
+              <button
+                class="text-secondary-container hover:text-secondary transition-colors"
+              >
+                <span class="material-symbols-outlined">add_circle</span>
+              </button>
+            </div>
+            <!-- Address Item 1 -->
+            <div
+              class="mb-sm p-sm bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-colors group cursor-pointer relative overflow-hidden"
+            >
+              <div class="flex items-start gap-sm relative z-10">
+                <span
+                  class="material-symbols-outlined text-secondary-container mt-1"
+                  >home</span
+                >
+                <div>
+                  <p class="font-label-sm text-label-sm text-on-surface mb-xs">
+                    Home - Primary
+                  </p>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    123 Velocity Blvd, Apt 4B<br />New York, NY 10001
+                  </p>
+                </div>
+              </div>
+              <img
+                alt="Map Background"
+                class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity"
+                data-alt="A minimal, abstract digital map visualization showing a dense city grid representing New York City. The map utilizes a sleek palette of light grays and pristine whites, punctuated by subtle Midnight Navy route lines. The lighting is flat and uniform, conveying modern efficiency and precision. The overall aesthetic is clean, technical, and perfectly suited for a high-end interface background."
+                data-location="New York"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE6dRlHX-17q2_EhJGOI-zXIGcuMfl4UL9jScnQ8nPMKTAD8_zXAo6rpPXlsa1fD6g7h7RS9uLkLwfif33Q_4ilAPsy72IEHLfEjV4QzMRiopKGLktBaIHLnZUhsK0xllG0FLt-Tya7B6652KQmb9ow3K18Eg19FtUkU2tU9EjOf7n9aSw2mohNISCcCUMYbhUb9FG7Q81G-waYLeip6ZebKHpUCYfpZPR5_GXfLWAQV4hLnKxzEeE_Qa539Xdm3CVetu4cAVPReA"
+              />
+            </div>
+            <!-- Address Item 2 -->
+            <div
+              class="p-sm bg-surface rounded-lg border border-outline-variant hover:border-secondary-container transition-colors cursor-pointer"
+            >
+              <div class="flex items-start gap-sm">
+                <span class="material-symbols-outlined text-outline mt-1"
+                  >work</span
+                >
+                <div>
+                  <p class="font-label-sm text-label-sm text-on-surface mb-xs">
+                    Office
+                  </p>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    880 Tech Park Drive<br />San Francisco, CA 94105
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right Column: Order History -->
+        <div class="lg:col-span-8 flex flex-col gap-md">
+          <div
+            class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-container-high h-full"
+          >
+            <div
+              class="flex justify-between items-center mb-md border-b border-surface-container-high pb-sm"
+            >
+              <h3 class="font-headline-lg text-headline-lg text-on-surface">
+                Order History
+              </h3>
+              <button
+                class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface flex items-center gap-xs"
+              >
+                View All
+                <span class="material-symbols-outlined text-[18px]"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+            <div class="flex flex-col gap-sm">
+              <!-- Order Item 1 -->
+              <div
+                class="flex flex-col md:flex-row items-start md:items-center justify-between p-sm rounded-lg hover:bg-surface-bright transition-colors group border border-transparent hover:border-surface-container-high"
+              >
+                <div
+                  class="flex items-center gap-md w-full md:w-auto mb-sm md:mb-0"
+                >
+                  <div
+                    class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-low"
+                  >
+                    <img
+                      alt="Product Image"
+                      class="w-full h-full object-cover mix-blend-multiply"
+                      data-alt="A pair of sleek, modern athletic sneakers displayed on a minimal, pristine white surface. The lighting is intense and directional, highlighting the vibrant red accents and premium textural details of the shoe. Deep, sharp shadows create a sense of depth and high-end commercial quality. The mood is dynamic, fast-paced, and highly desirable, aligning with a velocity-focused retail brand."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcDjsKpErpYm17y8WG9-2XNyKSo26rCAqL7S80iOvjjehCX__QQr8DolKD2A5CV61uZUVhtIkA6I2t5HIQX37j_l-EgW52NbkDtuTyj4boxeaR819p_C0Xt6xb36Ie_K9qgV3feYXfm4bOLy0MVSBS3bkcRvoghCLq9bJH4RwUgxZvfhiEVChqymyxCbRgeK_zlg9Wx7AslOi0tm6mgzDhRK8v5ObqkQhk0TjUf6Sd0C0y7yCwDL07QyX40qhI4EeEEdphWfYzrt4"
+                    />
+                  </div>
+                  <div>
+                    <p
+                      class="font-label-sm text-label-sm text-on-surface mb-xs"
+                    >
+                      Order #ORD-88291
+                    </p>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Placed on Oct 24, 2023
+                    </p>
+                    <p
+                      class="font-label-sm text-label-sm text-on-surface mt-xs hidden md:block"
+                    >
+                      Velocity Runner Pro x 1
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto gap-sm"
+                >
+                  <span
+                    class="inline-flex items-center px-2 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm gap-xs"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >local_shipping</span
+                    >
+                    In Transit
+                  </span>
+                  <p class="font-headline-md text-headline-md text-on-surface">
+                    $145.00
+                  </p>
+                </div>
+              </div>
+              <hr class="border-surface-container-high" />
+              <!-- Order Item 2 -->
+              <div
+                class="flex flex-col md:flex-row items-start md:items-center justify-between p-sm rounded-lg hover:bg-surface-bright transition-colors group border border-transparent hover:border-surface-container-high"
+              >
+                <div
+                  class="flex items-center gap-md w-full md:w-auto mb-sm md:mb-0"
+                >
+                  <div
+                    class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-low"
+                  >
+                    <img
+                      alt="Product Image"
+                      class="w-full h-full object-cover mix-blend-multiply"
+                      data-alt="A minimalist, premium cotton t-shirt neatly folded on a smooth, light gray surface. The lighting is soft, diffused, and overhead, ensuring flawless illumination with no harsh shadows. The color palette is strictly neutral, focusing on high-quality textures and clean lines. The overall presentation is immaculate, conveying a sense of high-end basics and effortless modern style."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuD229z_r7bg4wRd4BM9fdoUL0bnQq72L4s2FvC7d8Pi5FOUUS4wohCBbOQsG08W4Hs5ytzVFErU4ZZ-clBZXMfj9ppcsa4DBoRL4w6mWQkpgdyzXRJWs6cUXYZptdQML09denR1GsumddLhfU-iPZpdn0-RfD4ezkw4ApQWv29ShQYszKX2F1-9oBK00s3I8Bbd02S6yqCqIplCJEVJzkZuamqYISuWzBpSUAQcuN4HfY_RXi40-M0poIQ9R8amOo5DDkOAoo6-1R0"
+                    />
+                  </div>
+                  <div>
+                    <p
+                      class="font-label-sm text-label-sm text-on-surface mb-xs"
+                    >
+                      Order #ORD-77102
+                    </p>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Placed on Sep 12, 2023
+                    </p>
+                    <p
+                      class="font-label-sm text-label-sm text-on-surface mt-xs hidden md:block"
+                    >
+                      Essential Heavyweight Tee x 2
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto gap-sm"
+                >
+                  <span
+                    class="inline-flex items-center px-2 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm gap-xs"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >check_circle</span
+                    >
+                    Delivered
+                  </span>
+                  <p class="font-headline-md text-headline-md text-on-surface">
+                    $80.00
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-slate-50 dark:bg-slate-950 w-full py-16 border-t border-slate-200 dark:border-slate-800 flat no-shadows text-orange-600 dark:text-orange-500 font-inter text-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12"
+      >
+        <div class="flex flex-col">
+          <span class="text-xl font-black text-slate-900 dark:text-white mb-4"
+            >SHOPPIFY</span
+          >
+          <p class="text-slate-500 dark:text-slate-400 mt-auto">
+            © 2024 Shoppify Inc. High-velocity retail.
+          </p>
+        </div>
+        <div class="flex flex-col space-y-3">
+          <a
+            class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+            href="#"
+            >Terms of Service</a
+          >
+        </div>
+        <div class="flex flex-col space-y-3">
+          <a
+            class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+            href="#"
+            >Shipping Info</a
+          >
+          <a
+            class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+            href="#"
+            >Returns</a
+          >
+        </div>
+        <div class="flex flex-col space-y-3">
+          <a
+            class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+            href="#"
+            >Contact Us</a
+          >
+          <a
+            class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+            href="#"
+            >Newsletter</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

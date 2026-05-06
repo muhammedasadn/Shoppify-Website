@@ -1,0 +1,672 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shoppify - Collections</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#eff4ff",
+              "on-surface-variant": "#45464d",
+              "on-tertiary-container": "#818486",
+              "surface-container-high": "#dce9ff",
+              "tertiary-fixed": "#e0e3e5",
+              tertiary: "#000000",
+              "tertiary-fixed-dim": "#c4c7c9",
+              "primary-fixed-dim": "#bec6e0",
+              "surface-container-highest": "#d3e4fe",
+              "on-tertiary-fixed": "#191c1e",
+              "on-error-container": "#93000a",
+              "on-background": "#0b1c30",
+              "primary-fixed": "#dae2fd",
+              "inverse-on-surface": "#eaf1ff",
+              "surface-variant": "#d3e4fe",
+              "surface-tint": "#565e74",
+              "inverse-surface": "#213145",
+              "surface-container-lowest": "#ffffff",
+              outline: "#76777d",
+              "secondary-fixed": "#ffdbcc",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#3f465c",
+              "surface-bright": "#f8f9ff",
+              "outline-variant": "#c6c6cd",
+              "on-tertiary": "#ffffff",
+              surface: "#f8f9ff",
+              "on-error": "#ffffff",
+              "surface-dim": "#cbdbf5",
+              "tertiary-container": "#191c1e",
+              background: "#f8f9ff",
+              "on-secondary-fixed-variant": "#7a3000",
+              "secondary-container": "#fe6b00",
+              "primary-container": "#131b2e",
+              primary: "#000000",
+              "on-surface": "#0b1c30",
+              error: "#ba1a1a",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#ffb693",
+              "on-primary-container": "#7c839b",
+              "on-tertiary-fixed-variant": "#444749",
+              "on-secondary-fixed": "#351000",
+              "on-secondary-container": "#572000",
+              "inverse-primary": "#bec6e0",
+              secondary: "#a04100",
+              "surface-container": "#e5eeff",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#131b2e",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              base: "8px",
+              lg: "48px",
+              sm: "12px",
+              margin: "32px",
+              md: "24px",
+              xs: "4px",
+              xl: "80px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "display-xl": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-md": ["Inter"],
+              "headline-lg": ["Inter"],
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "display-xl": [
+                "60px",
+                {
+                  lineHeight: "72px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-sm": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-lg": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary"
+  >
+    <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
+      <nav
+        class="bg-primary-container text-white rounded-full px-8 py-4 flex items-center justify-between shadow-2xl backdrop-blur-md bg-opacity-95 border border-white/10"
+      >
+        <div class="flex items-center gap-12">
+          <a class="text-xl font-black tracking-tighter" href="#">SHOPPIFY</a>
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              class="text-sm font-semibold opacity-70 hover:opacity-100 transition-opacity"
+              href="#"
+              >Shop All</a
+            >
+            <a class="text-sm font-bold text-secondary-container" href="#"
+              >Collections</a
+            >
+            <a
+              class="text-sm font-semibold opacity-70 hover:opacity-100 transition-opacity"
+              href="#"
+              >New Arrivals</a
+            >
+            <a
+              class="text-sm font-semibold opacity-70 hover:opacity-100 transition-opacity"
+              href="#"
+              >Sale</a
+            >
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <button
+            class="hidden lg:flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest"
+          >
+            <span class="material-symbols-outlined text-sm">mail</span>
+            Subscribe
+          </button>
+          <div class="flex items-center gap-4">
+            <button
+              class="material-symbols-outlined opacity-70 hover:opacity-100 transition-opacity"
+            >
+              search
+            </button>
+            <button
+              class="material-symbols-outlined opacity-70 hover:opacity-100 transition-opacity"
+            >
+              shopping_bag
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <main class="pt-48 pb-xl px-8 max-w-7xl mx-auto">
+      <header class="mb-lg">
+        <h1
+          class="font-display-xl text-display-xl text-primary-container tracking-tight"
+        >
+          Collections
+        </h1>
+        <p
+          class="font-body-lg text-body-lg text-on-surface-variant mt-xs max-w-2xl"
+        >
+          Curated selections of high-velocity aesthetics for the modern
+          minimalist.
+        </p>
+      </header>
+      <div class="flex flex-col lg:flex-row gap-xl">
+        <aside class="w-full lg:w-64 flex-shrink-0 hidden md:block">
+          <div class="sticky top-40 space-y-lg">
+            <div>
+              <h3
+                class="font-label-sm text-label-sm text-primary-container uppercase tracking-widest mb-sm border-b border-outline-variant pb-xs"
+              >
+                Categories
+              </h3>
+              <ul class="space-y-sm mt-md">
+                <li>
+                  <a
+                    class="font-body-md text-body-md text-secondary-container font-semibold transition-colors flex items-center justify-between group"
+                    href="#"
+                    >All Collections
+                    <span
+                      class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                      >arrow_forward</span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors flex items-center justify-between group"
+                    href="#"
+                    >Electronics
+                    <span
+                      class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                      >arrow_forward</span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors flex items-center justify-between group"
+                    href="#"
+                    >Fashion
+                    <span
+                      class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                      >arrow_forward</span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors flex items-center justify-between group"
+                    href="#"
+                    >Home Decor
+                    <span
+                      class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                      >arrow_forward</span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors flex items-center justify-between group"
+                    href="#"
+                    >Activewear
+                    <span
+                      class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                      >arrow_forward</span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors flex items-center justify-between group"
+                    href="#"
+                    >Accessories
+                    <span
+                      class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                      >arrow_forward</span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors flex items-center justify-between group"
+                    href="#"
+                    >Footwear
+                    <span
+                      class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                      >arrow_forward</span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors flex items-center justify-between group"
+                    href="#"
+                    >Limited Drops
+                    <span
+                      class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                      >arrow_forward</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                class="font-label-sm text-label-sm text-primary-container uppercase tracking-widest mb-sm border-b border-outline-variant pb-xs"
+              >
+                Availability
+              </h3>
+              <ul class="space-y-sm mt-md">
+                <li>
+                  <label class="flex items-center gap-sm cursor-pointer group">
+                    <input
+                      class="rounded border-outline-variant text-secondary-container focus:ring-secondary-container bg-surface-container-lowest w-5 h-5 transition-colors cursor-pointer"
+                      type="checkbox"
+                    />
+                    <span
+                      class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary-container transition-colors"
+                      >In Stock (124)</span
+                    >
+                  </label>
+                </li>
+                <li>
+                  <label class="flex items-center gap-sm cursor-pointer group">
+                    <input
+                      class="rounded border-outline-variant text-secondary-container focus:ring-secondary-container bg-surface-container-lowest w-5 h-5 transition-colors cursor-pointer"
+                      type="checkbox"
+                    />
+                    <span
+                      class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary-container transition-colors"
+                      >Pre-order (12)</span
+                    >
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+        <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+          <!-- Electronics -->
+          <a
+            class="group relative block overflow-hidden rounded-xl bg-surface-container-low aspect-[4/5] shadow-sm hover:shadow-md transition-shadow duration-300"
+            href="#"
+          >
+            <img
+              alt="Electronics"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQbCSgpH1Sbp1GgDn6rOjhH-JJr0Pb6keorfxQzH5bCjN1TwYbYMd4IrVpNMND6aTK17sbNQKZg2gcbMyP4kX1LDBEg9MIzp7n6Lyb5YkVt6TlFURjMH2e4Mobgh5PZIcn7hfdI3d6Pog4cQgbBci1fLPNKBY6qvaNqKe5wM_FBuLkGTo8tlrlyc2oMEvrx9ZICPAfhVcAGDWdkPOpmXD78erCIt73MnW-RfYH4Xr-MjRXOJQfkJHzKXSgc87pNRQRct8CM8aCSgk"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-lg">
+              <h2
+                class="font-headline-lg text-headline-lg text-on-primary transition-colors duration-300 group-hover:text-secondary-fixed"
+              >
+                Electronics
+              </h2>
+              <div
+                class="flex items-center mt-sm gap-xs text-inverse-primary group-hover:text-secondary-fixed-dim transition-colors duration-300"
+              >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest"
+                  >Explore</span
+                >
+                <span
+                  class="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- Fashion -->
+          <a
+            class="group relative block overflow-hidden rounded-xl bg-surface-container-low aspect-[4/5] shadow-sm hover:shadow-md transition-shadow duration-300"
+            href="#"
+          >
+            <img
+              alt="Fashion"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeOBvtYJ1zSPBhJoXrlpWhLLHVcrDWhGezSzyTeq393V_NuS4lpcgjqu93L7ZhXkKXM2iWkUeRTLh6hJ2N5lyt7s4RTo5G436xCiorBPJKhKSN11D7Gw1SsZaID9SyyUpe8nFK6vzqpkiOCgOzTIfY1Zolk8xJkPEA-H4p82OhXW1WhIg-Yp7ICMlCkfGWJZp-lIPip9jQgXh-eSZq4DLEk6FzGti2Nflp8B3TxODT5EILCWMqVXmnPCfwOeEV81cz2Yq0nCdY230"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-lg">
+              <h2
+                class="font-headline-lg text-headline-lg text-on-primary transition-colors duration-300 group-hover:text-secondary-fixed"
+              >
+                Fashion
+              </h2>
+              <div
+                class="flex items-center mt-sm gap-xs text-inverse-primary group-hover:text-secondary-fixed-dim transition-colors duration-300"
+              >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest"
+                  >Explore</span
+                >
+                <span
+                  class="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- Home Decor -->
+          <a
+            class="group relative block overflow-hidden rounded-xl bg-surface-container-low aspect-[4/5] shadow-sm hover:shadow-md transition-shadow duration-300"
+            href="#"
+          >
+            <img
+              alt="Home Decor"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuANyn-6OTunak-HpYeJdr04o_hQP-bjy4MnqH7R6ujE6UUzbbqmtQnsWan8G3OQjbx1iD45l4PLxVV-oR1sAl4Lrr-eHfJV_7VhL62IoQ6oZPdCkuAF78Kfe3GHFS9igITdWX2DifbO7YEBo09qwiKgVpQB1AC3DTz5Js2OvPXyCkmYMoq-_CUAWvV2gUMTQdGvdiTZuF5KPd_BHqNQj987EpWRvoQISz3tSowDwjHr5kv_i_OHqso5bVPHDqjs4Mpr5iPt6Y2RTtY"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-lg">
+              <h2
+                class="font-headline-lg text-headline-lg text-on-primary transition-colors duration-300 group-hover:text-secondary-fixed"
+              >
+                Home Decor
+              </h2>
+              <div
+                class="flex items-center mt-sm gap-xs text-inverse-primary group-hover:text-secondary-fixed-dim transition-colors duration-300"
+              >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest"
+                  >Explore</span
+                >
+                <span
+                  class="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- Activewear -->
+          <a
+            class="group relative block overflow-hidden rounded-xl bg-surface-container-low aspect-[4/5] shadow-sm hover:shadow-md transition-shadow duration-300"
+            href="#"
+          >
+            <img
+              alt="Activewear"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNaowaGyeNkLHk0D5aDTEOUP2UQo-nEyh2JmTEK8XtdRjg1DoV-mVyjs8dndCGmKRidzflFBn1_dOSo8BYehsRLF2CFBR_I_4gfEALBHXEap1YVvDY1sby7AxDzxatrllStgicTREBGZtRx-Sp6ik3yI1ZrpqHaY4l_OmmTSpK1lcKXIslm6wiaoCOEpf7JGDrDoodUUZxC8LrK9y7y6TaXPR1NKFFsKS0HOVHvOoJngPUgz-dVYxgwy2TfzNuFVpGCYg6Vejbs7I"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-lg">
+              <h2
+                class="font-headline-lg text-headline-lg text-on-primary transition-colors duration-300 group-hover:text-secondary-fixed"
+              >
+                Activewear
+              </h2>
+              <div
+                class="flex items-center mt-sm gap-xs text-inverse-primary group-hover:text-secondary-fixed-dim transition-colors duration-300"
+              >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest"
+                  >Explore</span
+                >
+                <span
+                  class="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- New: Accessories -->
+          <a
+            class="group relative block overflow-hidden rounded-xl bg-surface-container-low aspect-[4/5] shadow-sm hover:shadow-md transition-shadow duration-300"
+            href="#"
+          >
+            <div
+              class="absolute inset-0 bg-neutral-900 group-hover:bg-neutral-800 transition-colors flex items-center justify-center overflow-hidden"
+            >
+              <span
+                class="material-symbols-outlined text-white/5 text-[15rem] absolute rotate-12"
+                >watch</span
+              >
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-lg">
+              <h2
+                class="font-headline-lg text-headline-lg text-on-primary transition-colors duration-300 group-hover:text-secondary-fixed"
+              >
+                Accessories
+              </h2>
+              <div
+                class="flex items-center mt-sm gap-xs text-inverse-primary group-hover:text-secondary-fixed-dim transition-colors duration-300"
+              >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest"
+                  >Explore</span
+                >
+                <span
+                  class="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- New: Footwear -->
+          <a
+            class="group relative block overflow-hidden rounded-xl bg-surface-container-low aspect-[4/5] shadow-sm hover:shadow-md transition-shadow duration-300"
+            href="#"
+          >
+            <div
+              class="absolute inset-0 bg-secondary-container group-hover:bg-secondary transition-colors flex items-center justify-center overflow-hidden"
+            >
+              <span
+                class="material-symbols-outlined text-white/5 text-[15rem] absolute -rotate-12"
+                >ice_skating</span
+              >
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-lg">
+              <h2
+                class="font-headline-lg text-headline-lg text-on-primary transition-colors duration-300 group-hover:text-secondary-fixed"
+              >
+                Footwear
+              </h2>
+              <div
+                class="flex items-center mt-sm gap-xs text-inverse-primary group-hover:text-secondary-fixed-dim transition-colors duration-300"
+              >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest"
+                  >Explore</span
+                >
+                <span
+                  class="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- New: Limited Drops (Full width on md, 1 col on lg) -->
+          <a
+            class="group relative block overflow-hidden rounded-xl bg-surface-container-low aspect-[4/5] shadow-sm hover:shadow-md transition-shadow duration-300 md:col-span-2 lg:col-span-2"
+            href="#"
+          >
+            <div
+              class="absolute inset-0 bg-primary-container flex items-center justify-center overflow-hidden"
+            >
+              <div
+                class="text-white/5 font-black text-[20rem] leading-none select-none tracking-tighter"
+              >
+                DROPS
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary-container/95 via-primary-container/40 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-lg">
+              <div
+                class="inline-block px-3 py-1 bg-secondary-container text-white text-[10px] font-black uppercase tracking-widest mb-4 rounded"
+              >
+                Limited Edition
+              </div>
+              <h2
+                class="font-headline-lg text-headline-lg text-on-primary transition-colors duration-300 group-hover:text-secondary-fixed"
+              >
+                Limited Drops
+              </h2>
+              <div
+                class="flex items-center mt-sm gap-xs text-inverse-primary group-hover:text-secondary-fixed-dim transition-colors duration-300"
+              >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest"
+                  >Explore Release Calendar</span
+                >
+                <span
+                  class="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="bg-[#000000] text-white py-xl mt-xl overflow-hidden relative"
+    >
+      <div class="max-w-7xl mx-auto px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
+          <div class="md:col-span-1">
+            <p
+              class="text-sm leading-relaxed text-on-tertiary-container max-w-[240px]"
+            >
+              High-velocity retail engineered for speed. Premium aesthetics meet
+              ruthless efficiency.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-body-md font-bold mb-6">Legal</h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-sm text-on-tertiary-container hover:text-white transition-colors"
+                  href="#"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-on-tertiary-container hover:text-white transition-colors"
+                  href="#"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-body-md font-bold mb-6">Support</h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-sm text-on-tertiary-container hover:text-white transition-colors"
+                  href="#"
+                  >Shipping Info</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-on-tertiary-container hover:text-white transition-colors"
+                  href="#"
+                  >Returns</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-body-md font-bold mb-6">Connect</h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-sm text-on-tertiary-container hover:text-white transition-colors"
+                  href="#"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-on-tertiary-container hover:text-white transition-colors"
+                  href="#"
+                  >Newsletter</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="relative flex flex-col items-center justify-center pt-xl">
+          <p
+            class="text-[10px] uppercase tracking-[0.2em] text-on-tertiary-container font-bold mb-4 z-10"
+          >
+            © 2024 Shoppify Inc. All rights reserved.
+          </p>
+          <div class="select-none pointer-events-none opacity-10 text-center">
+            <div
+              class="text-[clamp(4rem,18vw,20rem)] font-black leading-none tracking-tighter text-[#1a1a1a]"
+              style="-webkit-text-stroke: 1px #333"
+            >
+              SHOPPIFY
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

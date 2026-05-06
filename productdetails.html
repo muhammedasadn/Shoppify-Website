@@ -1,0 +1,643 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shoppify - Product Detail</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#eff4ff",
+              "on-surface-variant": "#45464d",
+              "on-tertiary-container": "#818486",
+              "surface-container-high": "#dce9ff",
+              "tertiary-fixed": "#e0e3e5",
+              tertiary: "#000000",
+              "tertiary-fixed-dim": "#c4c7c9",
+              "primary-fixed-dim": "#bec6e0",
+              "surface-container-highest": "#d3e4fe",
+              "on-tertiary-fixed": "#191c1e",
+              "on-error-container": "#93000a",
+              "on-background": "#0b1c30",
+              "primary-fixed": "#dae2fd",
+              "inverse-on-surface": "#eaf1ff",
+              "surface-variant": "#d3e4fe",
+              "surface-tint": "#565e74",
+              "inverse-surface": "#213145",
+              "surface-container-lowest": "#ffffff",
+              outline: "#76777d",
+              "secondary-fixed": "#ffdbcc",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#3f465c",
+              "surface-bright": "#f8f9ff",
+              "outline-variant": "#c6c6cd",
+              "on-tertiary": "#ffffff",
+              surface: "#f8f9ff",
+              "on-error": "#ffffff",
+              "surface-dim": "#cbdbf5",
+              "tertiary-container": "#191c1e",
+              background: "#f8f9ff",
+              "on-secondary-fixed-variant": "#7a3000",
+              "secondary-container": "#fe6b00",
+              "primary-container": "#131b2e",
+              primary: "#000000",
+              "on-surface": "#0b1c30",
+              error: "#ba1a1a",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#ffb693",
+              "on-primary-container": "#7c839b",
+              "on-tertiary-fixed-variant": "#444749",
+              "on-secondary-fixed": "#351000",
+              "on-secondary-container": "#572000",
+              "inverse-primary": "#bec6e0",
+              secondary: "#a04100",
+              "surface-container": "#e5eeff",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#131b2e",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              base: "8px",
+              lg: "48px",
+              sm: "12px",
+              margin: "32px",
+              md: "24px",
+              xs: "4px",
+              xl: "80px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "display-xl": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-md": ["Inter"],
+              "headline-lg": ["Inter"],
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "display-xl": [
+                "60px",
+                {
+                  lineHeight: "72px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-sm": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-lg": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background min-h-screen flex flex-col font-body-md text-on-surface"
+  >
+    <!-- TopNavBar (Rendered exactly from JSON) -->
+    <header
+      class="fixed top-0 w-full z-50 font-inter antialiased transition-all duration-300 bg-transparent"
+    >
+      <div class="max-w-7xl mx-auto px-margin py-6 pointer-events-none">
+        <div
+          class="pointer-events-auto bg-[#1a1a1a]/90 backdrop-blur-xl rounded-full h-16 flex items-center justify-between px-2 shadow-2xl border border-white/5"
+        >
+          <!-- Left: Logo Icon -->
+          <div class="flex items-center pl-1">
+            <div
+              class="w-12 h-12 bg-white rounded-full flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-black"
+                style="font-size: 28px"
+                >public</span
+              >
+            </div>
+            <span class="text-white font-bold text-xl tracking-tighter ml-3"
+              >SHOPPIFY</span
+            >
+          </div>
+          <!-- Center: Nav Links -->
+          <nav class="hidden md:flex items-center gap-10">
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >Shop All</a
+            >
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >Collections</a
+            >
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >New Arrivals</a
+            >
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >Sale</a
+            >
+          </nav>
+          <!-- Right: Contact Button -->
+          <div class="pr-1">
+            <a
+              class="bg-white text-black font-semibold text-body-md px-8 h-12 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors"
+              href="mailto:ihyaet@gmail.com"
+            >
+              ihyaet@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main
+      class="flex-grow pt-[120px] pb-xl px-margin max-w-[1440px] mx-auto w-full"
+    >
+      <!-- Breadcrumbs -->
+      <nav
+        class="mb-md text-on-surface-variant font-label-sm text-label-sm flex items-center gap-2"
+      >
+        <a class="hover:text-secondary-container transition-colors" href="#"
+          >Home</a
+        >
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <a class="hover:text-secondary-container transition-colors" href="#"
+          >Shop All</a
+        >
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <a class="hover:text-secondary-container transition-colors" href="#"
+          >Performance Running</a
+        >
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="text-on-background">Velocity Pro X</span>
+      </nav>
+      <!-- Product Bento Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg mb-xl">
+        <!-- Left: Gallery Asymmetric Layout (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col gap-base">
+          <div
+            class="w-full h-[600px] bg-surface-container-low rounded-xl overflow-hidden relative group"
+          >
+            <img
+              alt="Main product view"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-alt="A high-end, studio-lit photograph of a modern, aerodynamic running shoe in vibrant kinetic orange and deep navy blue. The shoe is presented against a pristine, minimalist white background, emphasizing its sleek design and advanced materials. The lighting is crisp and cool, creating sharp contrasts and subtle ambient shadows that reflect a high-velocity, premium activewear brand aesthetic. The composition is dynamic, capturing the essence of speed and elite athletic performance."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9VgLthXwOPP8lgvPDQWHseCgGH859ehlsejt8U9prjjh-WWFTqm_U6-jQJVG0rlXQNc6OUR9gzubgyhe8ZcE-7EsOlQg5X3ySOxm2ABKjorIrnuDkAXkPMjceMVnlUiOAwsy8D8vXaIuBizG8hiTZ99eAf6c6-3VEH1CtIBrF8TgsjYoDazSErSJsIofKqb_eXrCAbLoUpctJS52ZmVowRtnuhJmA3R9hf2jzJUufMcJach197NZSsZ8XQMQXQH4UIC5_vkzRbQs"
+            />
+          </div>
+          <div class="grid grid-cols-3 gap-base h-[200px]">
+            <div
+              class="bg-surface-container-low rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-secondary-container transition-all"
+            >
+              <img
+                alt="Product detail view 1"
+                class="w-full h-full object-cover"
+                data-alt="A close-up, macro photograph detailing the breathable mesh texture and reinforced stitching of a premium running shoe. The materials are a stark contrast of deep midnight navy and bright energetic orange. The shot is tightly framed against a minimalist white backdrop, illuminated by soft, high-key lighting that highlights the technical craftsmanship and high-performance nature of the product within a modern retail context."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlWM113bsouHZ9TFk2_yAx0E4qYqt7PL4h9xjWnucPK9GrVNhZR3r23KrS5hhiy_po-9QKQG0fdIoDH74jViELIr2lk0VEfPoAh8QJCoNPbF6OD9WQnN3KaZdwI9LnNH_yrZrnrwbqNLH7uIDRpL4_Gpcoe9P3nyVoo7-no-LTmII53uCO3bMr8RRPumxNFOiWNwk8DNMoL3brcKOIh5w3VVJ91GqfCg9ARx7x7ClA3mI9wgL0IukV3wUw_s4JPTagv14rPQgBSgQ"
+              />
+            </div>
+            <div
+              class="bg-surface-container-low rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-secondary-container transition-all"
+            >
+              <img
+                alt="Product detail view 2"
+                class="w-full h-full object-cover"
+                data-alt="An angled top-down view of a modern running shoe, focusing on the ergonomic insole and the lacing system. The color palette features stark whites, deep blue accents, and striking kinetic orange highlights. The lighting is immaculate, casting soft, diffused ambient shadows that give the shoe a three-dimensional pop off the pure white background. The overall aesthetic is clean, fast, and distinctly premium."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY_XvHOU3G7ET-XzLS3G5CXbNl3_LEaExx2FtGJABB4aAE6UVXJSikuW-2StQxrCxOPRkk4HIrfzkfXsQNM00Rjv0T4UZlN1UvdQYDaQXmigHYOKlaTMDdlvqwCkbya6rWXhEKjwhv_V9CYVQuyquNXvNNwmAlYs2HQ_Hmr0RMSPB1lW833WNaNvyHSfhupmUUl4UWMPHrJJ9rlDpEX4OaC_tWSFqG2vsIfhF6S--UVeOQzgHySoqvnAYkxPXVVTC-Iv9JrjpUczY"
+              />
+            </div>
+            <div
+              class="bg-surface-container-low rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-secondary-container transition-all"
+            >
+              <img
+                alt="Product detail view 3"
+                class="w-full h-full object-cover"
+                data-alt="A detailed shot of the sole of a high-performance athletic shoe, revealing its aggressive tread pattern designed for maximum traction and speed. The sole is primarily a deep, solid navy blue, punctuated by vibrant orange grip zones. Photographed in a pristine studio environment with bright, white lighting that eliminates harsh shadows, perfectly aligning with a minimalist, high-contrast, modern e-commerce visual style."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq9KCSYvQ4BozTNGRkfF8vI-lmCbfu-s6yBwPXiN-15ik8b5njSbP_VbXWqRrA_Hmeth2gXYnzIjLs0X15lwvwP8y3684JFGaHNvoc6sYXkXtjg13xdcrBU7CWasSX2hExQg9_QIFLkFqcm3ZlLT-7gHe7ZOrNADfoYym4IC0MHtXDmGuxBxwW7KwWeRg4TuAsFXCtIVnkAZKu1NCGD4hGh7HPe08VYUsy5HBjLv6QGILqo8qP18W6dwDMuXOYkdToF_DEBoSw1Vw"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Right: Product Details (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col">
+          <div class="sticky top-[120px]">
+            <span
+              class="font-label-sm text-label-sm text-secondary-container tracking-widest uppercase mb-xs block"
+              >Performance Series</span
+            >
+            <h1
+              class="font-display-xl text-display-xl text-on-background mb-sm leading-tight"
+            >
+              Velocity Pro X
+            </h1>
+            <div class="flex items-end gap-md mb-lg">
+              <span class="font-headline-lg text-headline-lg text-on-background"
+                >$185.00</span
+              >
+              <div class="flex items-center gap-1 mb-2">
+                <span
+                  class="material-symbols-outlined text-secondary-container"
+                  data-weight="fill"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined text-secondary-container"
+                  data-weight="fill"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined text-secondary-container"
+                  data-weight="fill"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined text-secondary-container"
+                  data-weight="fill"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined text-surface-container-high"
+                  data-weight="fill"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span class="font-label-sm text-label-sm text-outline ml-2"
+                  >(128 Reviews)</span
+                >
+              </div>
+            </div>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">
+              Engineered for record-breaking speed. The Velocity Pro X features
+              an ultra-responsive carbon fiber plate and our lightest foam yet,
+              wrapped in a breathable, high-tension mesh upper.
+            </p>
+            <!-- Color Selection -->
+            <div class="mb-md">
+              <span
+                class="font-label-sm text-label-sm text-on-background block mb-sm"
+                >Color:
+                <span class="font-body-md font-normal text-on-surface-variant"
+                  >Kinetic Orange / Midnight Navy</span
+                ></span
+              >
+              <div class="flex gap-sm">
+                <button
+                  class="w-12 h-12 rounded-full border-2 border-on-background p-[2px]"
+                >
+                  <div
+                    class="w-full h-full rounded-full bg-gradient-to-br from-[#fe6b00] to-[#0b1c30]"
+                  ></div>
+                </button>
+                <button
+                  class="w-12 h-12 rounded-full border-2 border-transparent hover:border-outline-variant p-[2px] transition-colors"
+                >
+                  <div
+                    class="w-full h-full rounded-full bg-gradient-to-br from-[#ffffff] to-[#e0e3e5] border border-outline-variant"
+                  ></div>
+                </button>
+                <button
+                  class="w-12 h-12 rounded-full border-2 border-transparent hover:border-outline-variant p-[2px] transition-colors"
+                >
+                  <div
+                    class="w-full h-full rounded-full bg-gradient-to-br from-[#0b1c30] to-[#131b2e]"
+                  ></div>
+                </button>
+              </div>
+            </div>
+            <!-- Size Selection -->
+            <div class="mb-lg">
+              <div class="flex justify-between items-center mb-sm">
+                <span class="font-label-sm text-label-sm text-on-background"
+                  >Size (US Men's)</span
+                >
+                <a
+                  class="font-label-sm text-label-sm text-outline hover:text-on-background underline"
+                  href="#"
+                  >Size Guide</a
+                >
+              </div>
+              <div class="grid grid-cols-4 gap-sm">
+                <button
+                  class="py-3 border border-outline-variant rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:border-on-background transition-colors"
+                >
+                  8
+                </button>
+                <button
+                  class="py-3 border border-outline-variant rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:border-on-background transition-colors"
+                >
+                  8.5
+                </button>
+                <button
+                  class="py-3 border border-outline-variant rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:border-on-background transition-colors"
+                >
+                  9
+                </button>
+                <button
+                  class="py-3 border border-outline-variant rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:border-on-background transition-colors"
+                >
+                  9.5
+                </button>
+                <button
+                  class="py-3 bg-on-background text-surface-container-lowest border border-on-background rounded-lg font-label-sm text-label-sm transition-colors"
+                >
+                  10
+                </button>
+                <button
+                  class="py-3 border border-outline-variant rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:border-on-background transition-colors"
+                >
+                  10.5
+                </button>
+                <button
+                  class="py-3 border border-outline-variant rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:border-on-background transition-colors"
+                >
+                  11
+                </button>
+                <button
+                  class="py-3 border border-surface-container-high bg-surface-container-low text-on-tertiary-container rounded-lg font-label-sm text-label-sm cursor-not-allowed"
+                >
+                  11.5
+                </button>
+              </div>
+            </div>
+            <!-- Primary CTA -->
+            <button
+              class="w-full bg-secondary-container hover:bg-[#e05e00] text-surface-container-lowest font-headline-md text-headline-md py-4 rounded-xl transition-colors shadow-sm mb-lg flex justify-center items-center gap-2"
+            >
+              <span>Add to Cart</span>
+              <span class="material-symbols-outlined">shopping_cart</span>
+            </button>
+            <!-- Quick View Details -->
+            <div class="border-t border-outline-variant pt-md">
+              <h3
+                class="font-headline-md text-headline-md text-on-background mb-sm"
+              >
+                Quick Details
+              </h3>
+              <div class="grid grid-cols-1 gap-sm">
+                <div
+                  class="flex justify-between items-center py-2 border-b border-surface-container-high"
+                >
+                  <span
+                    class="font-body-md text-body-md text-on-surface-variant"
+                    >Weight</span
+                  >
+                  <span class="font-label-sm text-label-sm text-on-background"
+                    >7.8 oz (Size 9)</span
+                  >
+                </div>
+                <div
+                  class="flex justify-between items-center py-2 border-b border-surface-container-high"
+                >
+                  <span
+                    class="font-body-md text-body-md text-on-surface-variant"
+                    >Drop</span
+                  >
+                  <span class="font-label-sm text-label-sm text-on-background"
+                    >8 mm</span
+                  >
+                </div>
+                <div
+                  class="flex justify-between items-center py-2 border-b border-surface-container-high"
+                >
+                  <span
+                    class="font-body-md text-body-md text-on-surface-variant"
+                    >Support</span
+                  >
+                  <span class="font-label-sm text-label-sm text-on-background"
+                    >Neutral</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Similar Products Section -->
+      <div class="pt-xl border-t border-surface-container-high">
+        <h2 class="font-headline-lg text-headline-lg text-on-background mb-lg">
+          Complete the Kit
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+          <!-- Card 1 -->
+          <div class="group cursor-pointer">
+            <div
+              class="bg-surface-container-low rounded-xl aspect-[3/4] mb-sm overflow-hidden relative"
+            >
+              <img
+                alt="Similar product 1"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-alt="A clean, minimalist studio shot of a lightweight, dark navy blue running jacket laid flat against a pure white background. The jacket features subtle, high-visibility orange accents near the zippers and collar. The lighting is bright and evenly distributed, eliminating harsh shadows and emphasizing the premium, high-tech fabric. The visual style is distinctly modern and high-velocity, matching a top-tier athletic brand."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpcWvIXCoo1ZyNdmHTDtA15ALU2PQ8T1jPvtFenoneXBTso8W6U1_DQSYELgZGv2z1Bb1EdqmeN3sXA_DUb3nhHZ0ogTpu-0EcS4lFiBKnc5QdOgqypFV_rXYwjdLC1q79b4Ak8totg1fKEJQpSKUeBt94eCcidXZ5ydnOr2wDkgFtNEdsd6fBLn9GPandaiaGSFqIU24cRhbfYl1yTkYWfFOG-Ac9nTnEJLT3-0Q5iLy0Ytl05E0dohNfyWvHE1wt6lOKIH3srCU"
+              />
+              <div
+                class="absolute top-4 right-4 bg-surface-container-lowest rounded-full p-2 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <span class="material-symbols-outlined text-on-background"
+                  >favorite</span
+                >
+              </div>
+            </div>
+            <h4 class="font-label-sm text-label-sm text-on-background mb-1">
+              AeroShell Jacket
+            </h4>
+            <span
+              class="font-body-md text-body-md text-on-surface-variant block mb-1"
+              >Lightweight Outerwear</span
+            >
+            <span
+              class="font-headline-md text-headline-md text-primary-container"
+              >$120.00</span
+            >
+          </div>
+          <!-- Card 2 -->
+          <div class="group cursor-pointer">
+            <div
+              class="bg-surface-container-low rounded-xl aspect-[3/4] mb-sm overflow-hidden relative"
+            >
+              <img
+                alt="Similar product 2"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-alt="A sharply focused photograph of a pair of high-performance compression running shorts in deep midnight blue, presented against a stark, minimalist white studio backdrop. Subtle kinetic orange stitching details are visible along the seams. The high-key lighting casts a very soft, ambient shadow, giving the garment a premium, elevated feel consistent with a modern, fast-paced retail aesthetic."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjNTEEEmqjta8ifDvPlsa41m9Co2S_p6uadzXZQipJxlTNaILtGAa76A3pN8Ocd_oDrMZKe6djaa0XTuVccIvhs_b_D63_RiCI2nvQu2ECIy_oDSsQOanFP6J7wBuvGqzprAbztBOuqJEclIXtCnq3Xw61RFF7FuH-tfCin1stjWCvH0tDsVA8sUemzqOFPT6pbBewoM-ydTqHeYJ2sXgWk5N8v0wOLzt3PehGDui09miolIL29HoML_Ykku81dKpGraaR1-JFmFQ"
+              />
+            </div>
+            <h4 class="font-label-sm text-label-sm text-on-background mb-1">
+              Pro Elite Shorts
+            </h4>
+            <span
+              class="font-body-md text-body-md text-on-surface-variant block mb-1"
+              >Compression Fit</span
+            >
+            <span
+              class="font-headline-md text-headline-md text-primary-container"
+              >$65.00</span
+            >
+          </div>
+          <!-- Card 3 -->
+          <div class="group cursor-pointer">
+            <div
+              class="bg-surface-container-low rounded-xl aspect-[3/4] mb-sm overflow-hidden relative"
+            >
+              <img
+                alt="Similar product 3"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-alt="A sleek, modern water bottle designed for runners, featuring a matte navy blue finish with a striking orange cap. The bottle is photographed perfectly upright against a continuous white sweep background. The bright, high-contrast lighting creates a pristine, minimalist look, highlighting the ergonomic shape and premium materials, aligning with a high-velocity, modern active lifestyle brand."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZfyyF5E8HcySJjd1HCnvPLL15QCbYsHprEGq-04K1LLlUL6V7QL-eYMhgUnkzQEz2dYoojgwPcKN8OS6mdwlPH-xVuOD37RM-HHa1-zZ5CHMC4mWgr2RqMdI5h7-cmfbaZGuL0g9dSg2xtnzCO9sE8h9s9Cjsiw8kxJHQE2J9K7p-93ylpUx3363sGjCTgsbWubKsm97eIZrVpknO9F6IJbG9U2PfhjZieMyCkKtAMrlxOMvCg2zSqvm-x_QQyD7mdT_0G-iV1oQ"
+              />
+            </div>
+            <h4 class="font-label-sm text-label-sm text-on-background mb-1">
+              HydroFlask Dash
+            </h4>
+            <span
+              class="font-body-md text-body-md text-on-surface-variant block mb-1"
+              >Accessories</span
+            >
+            <span
+              class="font-headline-md text-headline-md text-primary-container"
+              >$35.00</span
+            >
+          </div>
+          <!-- Card 4 -->
+          <div class="group cursor-pointer">
+            <div
+              class="bg-surface-container-low rounded-xl aspect-[3/4] mb-sm overflow-hidden relative"
+            >
+              <img
+                alt="Similar product 4"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-alt="A close-up studio shot of a pair of highly technical running socks, predominantly white with geometric accents in deep navy and energetic orange. The socks are displayed symmetrically against an immaculate white background. The bright, even lighting ensures every woven texture is crisp and clear, conveying a sense of premium quality and high performance in a clean, modern visual style."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlquhgTH81snkYVLhr1hzx2KN6mtL02ytTfl8JHPXhsYIJqd0EIz1-4rk6S2t9KGiBhYs1SG_beYB0UCHFOoj6hzTxmgIa9cO9kLQG2Ckug2bqvbEDnUi0kSMdHaavCDuxWUgLQ8wnyijDzxIeh5Dk5osCIgb7E6v9S8-s6TWTixZu1pPT42XKoZcy41_JyOzE3YTgBBNG23iZmLkbIAMddcSnNZVW0C-T7KlDBA1YNjRYoVjOo0oMo_FWKgWOyjqrjh2tDpa3g3Q"
+              />
+            </div>
+            <h4 class="font-label-sm text-label-sm text-on-background mb-1">
+              Velocity Crew Socks
+            </h4>
+            <span
+              class="font-body-md text-body-md text-on-surface-variant block mb-1"
+              >Performance Wear</span
+            >
+            <span
+              class="font-headline-md text-headline-md text-primary-container"
+              >$22.00</span
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer (Rendered exactly from JSON) -->
+    <footer
+      class="bg-slate-50 dark:bg-slate-950 font-inter text-sm w-full py-16 border-t border-slate-200 dark:border-slate-800 flat no-shadows"
+    >
+      <div
+        class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12"
+      >
+        <div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+          <div class="text-xl font-black text-slate-900 dark:text-white">
+            SHOPPIFY
+          </div>
+          <p class="text-slate-500 dark:text-slate-400">
+            © 2024 Shoppify Inc. High-velocity retail.
+          </p>
+        </div>
+        <div
+          class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8"
+        >
+          <div class="flex flex-col gap-3">
+            <a
+              class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+              href="#"
+              >Privacy Policy</a
+            >
+            <a
+              class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+              href="#"
+              >Terms of Service</a
+            >
+          </div>
+          <div class="flex flex-col gap-3">
+            <a
+              class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+              href="#"
+              >Shipping Info</a
+            >
+            <a
+              class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+              href="#"
+              >Returns</a
+            >
+          </div>
+          <div class="flex flex-col gap-3">
+            <a
+              class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+              href="#"
+              >Contact Us</a
+            >
+            <a
+              class="text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors duration-200"
+              href="#"
+              >Newsletter</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

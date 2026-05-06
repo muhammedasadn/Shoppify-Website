@@ -1,0 +1,861 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shoppify - High-Velocity Retail</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#eff4ff",
+              "on-surface-variant": "#45464d",
+              "on-tertiary-container": "#818486",
+              "surface-container-high": "#dce9ff",
+              "tertiary-fixed": "#e0e3e5",
+              tertiary: "#000000",
+              "tertiary-fixed-dim": "#c4c7c9",
+              "primary-fixed-dim": "#bec6e0",
+              "surface-container-highest": "#d3e4fe",
+              "on-tertiary-fixed": "#191c1e",
+              "on-error-container": "#93000a",
+              "on-background": "#0b1c30",
+              "primary-fixed": "#dae2fd",
+              "inverse-on-surface": "#eaf1ff",
+              "surface-variant": "#d3e4fe",
+              "surface-tint": "#565e74",
+              "inverse-surface": "#213145",
+              "surface-container-lowest": "#ffffff",
+              outline: "#76777d",
+              "secondary-fixed": "#ffdbcc",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#3f465c",
+              "surface-bright": "#f8f9ff",
+              "outline-variant": "#c6c6cd",
+              "on-tertiary": "#ffffff",
+              surface: "#f8f9ff",
+              "on-error": "#ffffff",
+              "surface-dim": "#cbdbf5",
+              "tertiary-container": "#191c1e",
+              background: "#f8f9ff",
+              "on-secondary-fixed-variant": "#7a3000",
+              "secondary-container": "#fe6b00",
+              "primary-container": "#131b2e",
+              primary: "#000000",
+              "on-surface": "#0b1c30",
+              error: "#ba1a1a",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#ffb693",
+              "on-primary-container": "#7c839b",
+              "on-tertiary-fixed-variant": "#444749",
+              "on-secondary-fixed": "#351000",
+              "on-secondary-container": "#572000",
+              "inverse-primary": "#bec6e0",
+              secondary: "#a04100",
+              "surface-container": "#e5eeff",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#131b2e",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              base: "8px",
+              lg: "48px",
+              sm: "12px",
+              margin: "32px",
+              md: "24px",
+              xs: "4px",
+              xl: "80px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "display-xl": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-md": ["Inter"],
+              "headline-lg": ["Inter"],
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "display-xl": [
+                "80px",
+                {
+                  lineHeight: "88px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "900",
+                },
+              ],
+              "label-sm": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary"
+  >
+    <header
+      class="fixed top-0 w-full z-50 font-inter antialiased transition-all duration-300 bg-transparent"
+    >
+      <div class="max-w-7xl mx-auto px-margin py-6 pointer-events-none">
+        <div
+          class="pointer-events-auto bg-[#1a1a1a]/90 backdrop-blur-xl rounded-full h-16 flex items-center justify-between px-2 shadow-2xl border border-white/5"
+        >
+          <!-- Left: Logo Icon -->
+          <div class="flex items-center pl-1">
+            <div
+              class="w-12 h-12 bg-white rounded-full flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-black"
+                style="font-size: 28px"
+                >public</span
+              >
+            </div>
+            <span class="text-white font-bold text-xl tracking-tighter ml-3"
+              >SHOPPIFY</span
+            >
+          </div>
+          <!-- Center: Nav Links -->
+          <nav class="hidden md:flex items-center gap-10">
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >Shop All</a
+            >
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >Collections</a
+            >
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >New Arrivals</a
+            >
+            <a
+              class="text-white/80 hover:text-white font-medium text-body-md transition-colors"
+              href="#"
+              >Sale</a
+            >
+          </nav>
+          <!-- Right: Contact Button -->
+          <div class="pr-1">
+            <a
+              class="bg-white text-black font-semibold text-body-md px-8 h-12 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors"
+              href="mailto:ihyaet@gmail.com"
+            >
+              ihyaet@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="pb-xl">
+      <!-- High-Impact Hero Carousel -->
+      <section
+        class="relative w-full h-[100vh] min-h-[700px] overflow-hidden group"
+      >
+        <div
+          class="absolute inset-0 w-full h-full flex transition-transform duration-700 ease-in-out"
+        >
+          <div class="relative w-full h-full flex-shrink-0">
+            <img
+              alt="Hero Image"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida/ADBb0uiOSBcVvXQQ-5zYGXrEw2wDytyTl0xqAdGsXINbAuUzOS8jGVBkFI_7WZ_gi5vhQISjgAn5iZg4IFqdSdPaXjfFQernXN4GIkD0bWowdMQ2EDe1h_H84VfiAIbFKk7vH5UZMzqxAjnu5K_IWhnuOkoKMQSdUd_qme6WKMXYfCh_yK86qOdU3_IxMwUU-k_qFu43fcSU_af-wkENdMTesTpH8poJm4SDPI-zRkGcUPpT97gZ0vwFZiMBYe7wkDu55z2jTp3PZwXmug"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 w-full max-w-7xl mx-auto px-margin pb-xl z-10 flex flex-col justify-end h-full"
+            >
+              <div class="max-w-3xl">
+                <div
+                  class="inline-flex items-center gap-xs bg-white/20 backdrop-blur-md border border-white/30 px-sm py-xs rounded-full mb-md"
+                >
+                  <span
+                    class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"
+                  ></span>
+                  <span
+                    class="font-label-sm text-label-sm text-white uppercase tracking-wider"
+                    >New Drop Live</span
+                  >
+                </div>
+                <h1
+                  class="font-display-xl text-display-xl text-white mb-md leading-[0.9]"
+                >
+                  High-Velocity <br />
+                  <span class="text-secondary-container">Retail.</span>
+                </h1>
+                <p
+                  class="font-body-lg text-body-lg text-white/90 mb-lg max-w-lg"
+                >
+                  Experience shopping engineered for speed. Premium aesthetics
+                  meet ruthless efficiency in our latest curated collection.
+                </p>
+                <div class="flex items-center gap-sm">
+                  <button
+                    class="bg-white text-primary font-label-sm text-label-sm px-xl py-md rounded-full hover:bg-surface-container-low transition-colors duration-300 flex items-center gap-xs group"
+                  >
+                    Shop Now
+                    <span
+                      class="material-symbols-outlined group-hover:translate-x-1 transition-transform duration-200"
+                      style="font-size: 18px"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel Controls -->
+        <div
+          class="absolute bottom-10 right-10 flex gap-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <button
+            class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+          >
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          <button
+            class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+          >
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+      </section>
+      <!-- Featured Arrivals -->
+      <section class="max-w-[1600px] mx-auto px-margin py-[120px]">
+        <div class="flex flex-col md:flex-row gap-lg items-center">
+          <div class="w-full md:w-1/2">
+            <h2
+              class="font-display-xl text-display-xl text-primary mb-md leading-tight"
+            >
+              Seasonal<br />Must-Haves
+            </h2>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-md"
+            >
+              Elevate your rotation with our most anticipated pieces of the
+              season, designed for maximum impact.
+            </p>
+            <a
+              class="inline-flex items-center gap-2 font-label-sm text-label-sm text-secondary-container hover:text-secondary uppercase tracking-widest border-b-2 border-secondary-container pb-1 transition-all"
+              href="#"
+            >
+              Explore Collection
+              <span class="material-symbols-outlined" style="font-size: 16px"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div class="w-full md:w-1/2 grid grid-cols-2 gap-sm">
+            <div class="relative h-[600px] rounded-2xl overflow-hidden group">
+              <img
+                alt="Featured 1"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpjcTZKI3FXY80pDvmBF2NHAPGf4qsouRjgIF-P1-uMl-1s75qmb_UQ7R-zZImx_dsAUrps8NTxXYH6K064YphuYs404fLshIQMRAcOlL5OllK5vzPceDxGkHKs_7iw0EjIkjb1l8kVA0hNpzsDkeY8BIGt-3bM4SFF4Sj5xux2CfQFaeFMwq1oF4y9eSlBqvOdW7s4AQer79gNVPTATehrR04rD8YEr_ZFV28afqcdua6IMPgrv7gO0DoVF1Y0S9tdfwjp1fb4Sc"
+              />
+            </div>
+            <div
+              class="relative h-[600px] rounded-2xl overflow-hidden group mt-12"
+            >
+              <img
+                alt="Featured 2"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX2qxRqDdea25GdpC3XroZmC5ercBtFaxhlcihVbKNqZcVNccxGE2JXUaFtv5JSJvKkXbT5GQjJ5_0YNP08l21Ktl0wfFY0BUqL9rBR65DjNZWD31ce765hkNXba3VcMlm9_ab0V8Mnev71VrtRDAWi3s5UYIKCTE-noB0izZQUdC-pb8AAnS06vJt6NFlWLPlr9bC42ptY__hg4rZUwkWo7pqGDY859Oz812xw3zO81QwX-KSwEmlUY35RoZ8pxJHV3o_49AIhPM"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Trending Now Section -->
+      <section class="max-w-7xl mx-auto px-margin py-[100px]">
+        <div
+          class="flex justify-between items-end mb-xl border-b-2 border-primary pb-sm"
+        >
+          <div>
+            <h2 class="font-headline-lg text-headline-lg text-primary">
+              Trending Now
+            </h2>
+          </div>
+          <button
+            class="text-primary font-label-sm text-label-sm hover:text-secondary-container transition-colors duration-200 flex items-center gap-xs uppercase tracking-wider"
+          >
+            View All
+            <span class="material-symbols-outlined" style="font-size: 16px"
+              >arrow_forward</span
+            >
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <!-- Product Card 1 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative h-[450px] overflow-hidden bg-surface-container-low rounded-2xl mb-md"
+            >
+              <img
+                alt="Product Image"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2BBo00TinzDtV-GMMa34IQD7ScZAvjN9YR-zKmRA8vTJtxWk2otP7r4W5-zz2tE03dXwXe7DYTCxYSDjv9Xi-uTlcVGmPgHjDEEZSevd7sFojovDxWDQ7ywaYzODsRPmGufytE5EMBpjP6ligR1SCqJWzY-gCrgSG_xv1eK0OKlkGQctzwa0qUnoBqQuvQ2V9lTYGaYcpYSKP6RC9P-fETfrqq7McMdOOdSViOmCcOw9ROxxmRJCm3K5uQ3tvvQXl7VS0CvFmm4I"
+              />
+              <div
+                class="absolute top-sm left-sm bg-white text-primary font-label-sm text-label-sm px-sm py-xs rounded-full shadow-sm"
+              >
+                Bestseller
+              </div>
+            </div>
+            <div class="flex justify-between items-start px-xs">
+              <div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-1">
+                  Velocity Tee
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Midnight Navy
+                </p>
+              </div>
+              <p class="font-headline-md text-headline-md text-primary">$45</p>
+            </div>
+          </div>
+          <!-- Product Card 2 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative h-[450px] overflow-hidden bg-surface-container-low rounded-2xl mb-md"
+            >
+              <img
+                alt="Product Image"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPelAIDwQX3RHyg0bBeFXWGLM_yH7LUINbr_XK2RCtpA7XOnrRL4bfAGwouCS66UIg1k38eJnYjX3D7pdXGl3QetU5dRng5LFo1wSDtHm1NND_JrfQXFnX4QbMH1FVo3NhZAisi83SvtBkFi9gBHkNUkFC705kgaHzRXwVROXwFA-VUwoRroyyMBfNPeKGp8tz57EEgSPm849boUwy-GWNMcLVtSLcOIOOUMFXchtrfBi5AcmSsFDZeZLorqNtX-Iu5F6hqQ_wVgY"
+              />
+            </div>
+            <div class="flex justify-between items-start px-xs">
+              <div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-1">
+                  Aero Windbreaker
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Kinetic Orange
+                </p>
+              </div>
+              <p class="font-headline-md text-headline-md text-primary">$120</p>
+            </div>
+          </div>
+          <!-- Product Card 3 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative h-[450px] overflow-hidden bg-surface-container-low rounded-2xl mb-md"
+            >
+              <img
+                alt="Product Image"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW7Ee7Ahju1oHMXe7MjR00vYESN1w4Qlz4RxpfyEI8Iu_PbTlACCY2FbmdJ-06A1kSpzsUGGB-hed-43zjC-lyT3Mr3Sj4s1O1vlSCMkpJuhqFxt1r1IVZlSbyxgMXkbJ6__WZ9E3T-B5xfyzMNxBBg2JD2O0JuihVsd0y87k8_0NQT8kAvboNnulUr2Kk6Wl7Uy_lze0kqpVw9qkXtqhFWrXDcKH-H8Dbbto7XDdyZ_G4_-bY6qCHuwA9ueNdQ5uLg13br6-1N-w"
+              />
+            </div>
+            <div class="flex justify-between items-start px-xs">
+              <div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-1">
+                  Quantum Kicks
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  White / Navy
+                </p>
+              </div>
+              <p class="font-headline-md text-headline-md text-primary">$185</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Shop by Category -->
+      <section class="max-w-7xl mx-auto px-margin py-[100px]">
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-xl">
+          Explore Categories
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-md h-[700px]">
+          <!-- Large Feature -->
+          <div
+            class="md:col-span-2 relative rounded-2xl overflow-hidden group cursor-pointer"
+          >
+            <img
+              alt="Womenswear"
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpjcTZKI3FXY80pDvmBF2NHAPGf4qsouRjgIF-P1-uMl-1s75qmb_UQ7R-zZImx_dsAUrps8NTxXYH6K064YphuYs404fLshIQMRAcOlL5OllK5vzPceDxGkHKs_7iw0EjIkjb1l8kVA0hNpzsDkeY8BIGt-3bM4SFF4Sj5xux2CfQFaeFMwq1oF4y9eSlBqvOdW7s4AQer79gNVPTATehrR04rD8YEr_ZFV28afqcdua6IMPgrv7gO0DoVF1Y0S9tdfwjp1fb4Sc"
+            />
+            <div
+              class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 w-full p-xl bg-gradient-to-t from-black/60 to-transparent"
+            >
+              <h3 class="font-display-xl text-display-xl text-white">
+                Womenswear
+              </h3>
+              <p
+                class="font-label-sm text-label-sm text-white mt-4 flex items-center gap-xs uppercase tracking-widest"
+              >
+                Shop Now
+                <span class="material-symbols-outlined" style="font-size: 16px"
+                  >arrow_forward</span
+                >
+              </p>
+            </div>
+          </div>
+          <!-- Two Smaller Stacked Features -->
+          <div class="flex flex-col gap-md h-full">
+            <div
+              class="flex-1 relative rounded-2xl overflow-hidden group cursor-pointer"
+            >
+              <img
+                alt="Menswear"
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX2qxRqDdea25GdpC3XroZmC5ercBtFaxhlcihVbKNqZcVNccxGE2JXUaFtv5JSJvKkXbT5GQjJ5_0YNP08l21Ktl0wfFY0BUqL9rBR65DjNZWD31ce765hkNXba3VcMlm9_ab0V8Mnev71VrtRDAWi3s5UYIKCTE-noB0izZQUdC-pb8AAnS06vJt6NFlWLPlr9bC42ptY__hg4rZUwkWo7pqGDY859Oz812xw3zO81QwX-KSwEmlUY35RoZ8pxJHV3o_49AIhPM"
+              />
+              <div
+                class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-lg bg-gradient-to-t from-black/60 to-transparent"
+              >
+                <h3 class="font-headline-lg text-headline-lg text-white">
+                  Menswear
+                </h3>
+              </div>
+            </div>
+            <div
+              class="flex-1 relative rounded-2xl overflow-hidden group cursor-pointer"
+            >
+              <img
+                alt="Accessories"
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSTQzrw1MMZzk25s_PTSqV_KfGiqEA-0Et0eWdQyLDJIFrZ70EBICuGjpgY-e0nXAq1X_5I-pzwTq9RNEuG_UBMGmzafNQZBmKEQxhEM5_dbHu0YA6950onIi-iBrtqVCQs3VCwjbBMul4AHpEJFJn8-qq6-6eNVkyBCq1iQO2klFCUVf8Buro_-uOlb2oAjxEvxMHDQfOdcA9wUVbdaiMFx6mSzRR1hCtwFgYcxE6rH8zoI47iSnDdAjbA4Tir_wE1Nm78QjS9hI"
+              />
+              <div
+                class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-lg bg-gradient-to-t from-black/60 to-transparent"
+              >
+                <h3 class="font-headline-lg text-headline-lg text-white">
+                  Accessories
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Featured Collection (New Section) -->
+      <section class="max-w-7xl mx-auto px-margin py-[100px]">
+        <div
+          class="flex justify-between items-end mb-xl border-b-2 border-primary pb-sm"
+        >
+          <div>
+            <h2 class="font-headline-lg text-headline-lg text-primary">
+              Featured Collection
+            </h2>
+          </div>
+          <button
+            class="text-primary font-label-sm text-label-sm hover:text-secondary-container transition-colors duration-200 flex items-center gap-xs uppercase tracking-wider"
+          >
+            Shop Collection
+            <span class="material-symbols-outlined" style="font-size: 16px"
+              >arrow_forward</span
+            >
+          </button>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+          <!-- Product 1 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative aspect-[3/4] overflow-hidden bg-surface-container-low rounded-2xl mb-md"
+            >
+              <img
+                alt="Technical Shell"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPelAIDwQX3RHyg0bBeFXWGLM_yH7LUINbr_XK2RCtpA7XOnrRL4bfAGwouCS66UIg1k38eJnYjX3D7pdXGl3QetU5dRng5LFo1wSDtHm1NND_JrfQXFnX4QbMH1FVo3NhZAisi83SvtBkFi9gBHkNUkFC705kgaHzRXwVROXwFA-VUwoRroyyMBfNPeKGp8tz57EEgSPm849boUwy-GWNMcLVtSLcOIOOUMFXchtrfBi5AcmSsFDZeZLorqNtX-Iu5F6hqQ_wVgY"
+              />
+            </div>
+            <div class="flex justify-between items-start px-xs">
+              <div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-1">
+                  Technical Shell
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Alpine White
+                </p>
+              </div>
+              <p class="font-headline-md text-headline-md text-primary">$210</p>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative aspect-[3/4] overflow-hidden bg-surface-container-low rounded-2xl mb-md"
+            >
+              <img
+                alt="Cargo Joggers"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2BBo00TinzDtV-GMMa34IQD7ScZAvjN9YR-zKmRA8vTJtxWk2otP7r4W5-zz2tE03dXwXe7DYTCxYSDjv9Xi-uTlcVGmPgHjDEEZSevd7sFojovDxWDQ7ywaYzODsRPmGufytE5EMBpjP6ligR1SCqJWzY-gCrgSG_xv1eK0OKlkGQctzwa0qUnoBqQuvQ2V9lTYGaYcpYSKP6RC9P-fETfrqq7McMdOOdSViOmCcOw9ROxxmRJCm3K5uQ3tvvQXl7VS0CvFmm4I"
+              />
+            </div>
+            <div class="flex justify-between items-start px-xs">
+              <div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-1">
+                  Cargo Joggers
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Stealth Grey
+                </p>
+              </div>
+              <p class="font-headline-md text-headline-md text-primary">$135</p>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative aspect-[3/4] overflow-hidden bg-surface-container-low rounded-2xl mb-md"
+            >
+              <img
+                alt="Oversized Hoodie"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW7Ee7Ahju1oHMXe7MjR00vYESN1w4Qlz4RxpfyEI8Iu_PbTlACCY2FbmdJ-06A1kSpzsUGGB-hed-43zjC-lyT3Mr3Sj4s1O1vlSCMkpJuhqFxt1r1IVZlSbyxgMXkbJ6__WZ9E3T-B5xfyzMNxBBg2JD2O0JuihVsd0y87k8_0NQT8kAvboNnulUr2Kk6Wl7Uy_lze0kqpVw9qkXtqhFWrXDcKH-H8Dbbto7XDdyZ_G4_-bY6qCHuwA9ueNdQ5uLg13br6-1N-w"
+              />
+            </div>
+            <div class="flex justify-between items-start px-xs">
+              <div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-1">
+                  Oversized Hoodie
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Onyx Black
+                </p>
+              </div>
+              <p class="font-headline-md text-headline-md text-primary">$95</p>
+            </div>
+          </div>
+          <!-- Product 4 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative aspect-[3/4] overflow-hidden bg-surface-container-low rounded-2xl mb-md"
+            >
+              <img
+                alt="Performance Cap"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSTQzrw1MMZzk25s_PTSqV_KfGiqEA-0Et0eWdQyLDJIFrZ70EBICuGjpgY-e0nXAq1X_5I-pzwTq9RNEuG_UBMGmzafNQZBmKEQxhEM5_dbHu0YA6950onIi-iBrtqVCQs3VCwjbBMul4AHpEJFJn8-qq6-6eNVkyBCq1iQO2klFCUVf8Buro_-uOlb2oAjxEvxMHDQfOdcA9wUVbdaiMFx6mSzRR1hCtwFgYcxE6rH8zoI47iSnDdAjbA4Tir_wE1Nm78QjS9hI"
+              />
+            </div>
+            <div class="flex justify-between items-start px-xs">
+              <div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-1">
+                  Performance Cap
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Reflective Silver
+                </p>
+              </div>
+              <p class="font-headline-md text-headline-md text-primary">$40</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- The Edit (Blog Posts) (New Section) -->
+      <section class="max-w-7xl mx-auto px-margin py-[100px]">
+        <h2 class="font-display-xl text-display-xl text-primary mb-xl">
+          The Edit
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+          <!-- Blog Card 1 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative aspect-[16/10] overflow-hidden rounded-2xl mb-lg"
+            >
+              <img
+                alt="Editorial 1"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpjcTZKI3FXY80pDvmBF2NHAPGf4qsouRjgIF-P1-uMl-1s75qmb_UQ7R-zZImx_dsAUrps8NTxXYH6K064YphuYs404fLshIQMRAcOlL5OllK5vzPceDxGkHKs_7iw0EjIkjb1l8kVA0hNpzsDkeY8BIGt-3bM4SFF4Sj5xux2CfQFaeFMwq1oF4y9eSlBqvOdW7s4AQer79gNVPTATehrR04rD8YEr_ZFV28afqcdua6IMPgrv7gO0DoVF1Y0S9tdfwjp1fb4Sc"
+              />
+            </div>
+            <div class="px-xs">
+              <span
+                class="inline-block font-label-sm text-label-sm text-secondary-container uppercase tracking-widest mb-sm"
+                >Design</span
+              >
+              <h3
+                class="font-headline-lg text-headline-lg text-primary mb-md leading-tight group-hover:text-secondary-container transition-colors"
+              >
+                The Art of High-Velocity Movement
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant line-clamp-2"
+              >
+                Exploration of how kinetic energy and performance fabrics merge
+                to create the ultimate urban uniform.
+              </p>
+            </div>
+          </div>
+          <!-- Blog Card 2 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative aspect-[16/10] overflow-hidden rounded-2xl mb-lg"
+            >
+              <img
+                alt="Editorial 2"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX2qxRqDdea25GdpC3XroZmC5ercBtFaxhlcihVbKNqZcVNccxGE2JXUaFtv5JSJvKkXbT5GQjJ5_0YNP08l21Ktl0wfFY0BUqL9rBR65DjNZWD31ce765hkNXba3VcMlm9_ab0V8Mnev71VrtRDAWi3s5UYIKCTE-noB0izZQUdC-pb8AAnS06vJt6NFlWLPlr9bC42ptY__hg4rZUwkWo7pqGDY859Oz812xw3zO81QwX-KSwEmlUY35RoZ8pxJHV3o_49AIhPM"
+              />
+            </div>
+            <div class="px-xs">
+              <span
+                class="inline-block font-label-sm text-label-sm text-secondary-container uppercase tracking-widest mb-sm"
+                >Culture</span
+              >
+              <h3
+                class="font-headline-lg text-headline-lg text-primary mb-md leading-tight group-hover:text-secondary-container transition-colors"
+              >
+                Minimalism Meets Performance
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant line-clamp-2"
+              >
+                Why stripping back the noise is the most efficient way to gear
+                up for the modern landscape.
+              </p>
+            </div>
+          </div>
+          <!-- Blog Card 3 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative aspect-[16/10] overflow-hidden rounded-2xl mb-lg"
+            >
+              <img
+                alt="Editorial 3"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSTQzrw1MMZzk25s_PTSqV_KfGiqEA-0Et0eWdQyLDJIFrZ70EBICuGjpgY-e0nXAq1X_5I-pzwTq9RNEuG_UBMGmzafNQZBmKEQxhEM5_dbHu0YA6950onIi-iBrtqVCQs3VCwjbBMul4AHpEJFJn8-qq6-6eNVkyBCq1iQO2klFCUVf8Buro_-uOlb2oAjxEvxMHDQfOdcA9wUVbdaiMFx6mSzRR1hCtwFgYcxE6rH8zoI47iSnDdAjbA4Tir_wE1Nm78QjS9hI"
+              />
+            </div>
+            <div class="px-xs">
+              <span
+                class="inline-block font-label-sm text-label-sm text-secondary-container uppercase tracking-widest mb-sm"
+                >Lifestyle</span
+              >
+              <h3
+                class="font-headline-lg text-headline-lg text-primary mb-md leading-tight group-hover:text-secondary-container transition-colors"
+              >
+                Engineered for the Everyday Athlete
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant line-clamp-2"
+              >
+                The philosophy behind high-velocity retail and how it serves the
+                life in constant motion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Brand Philosophy Section -->
+      <section class="w-full bg-white py-[120px]">
+        <div class="max-w-7xl mx-auto px-margin">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+            <!-- Left Side: Detail Image -->
+            <div class="relative h-[600px] rounded-2xl overflow-hidden group">
+              <img
+                alt="Product Detail"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSTQzrw1MMZzk25s_PTSqV_KfGiqEA-0Et0eWdQyLDJIFrZ70EBICuGjpgY-e0nXAq1X_5I-pzwTq9RNEuG_UBMGmzafNQZBmKEQxhEM5_dbHu0YA6950onIi-iBrtqVCQs3VCwjbBMul4AHpEJFJn8-qq6-6eNVkyBCq1iQO2klFCUVf8Buro_-uOlb2oAjxEvxMHDQfOdcA9wUVbdaiMFx6mSzRR1hCtwFgYcxE6rH8zoI47iSnDdAjbA4Tir_wE1Nm78QjS9hI"
+              />
+              <div class="absolute inset-0 bg-primary/5"></div>
+            </div>
+            <!-- Right Side: Philosophy Content -->
+            <div class="flex flex-col gap-md">
+              <h2
+                class="font-display-xl text-display-xl text-primary leading-tight"
+              >
+                Built for Speed.<br />
+                <span class="text-secondary-container"
+                  >Designed for Impact.</span
+                >
+              </h2>
+              <div class="w-24 h-1 bg-secondary-container mb-xs"></div>
+              <p
+                class="font-body-lg text-body-lg text-on-surface-variant max-w-lg"
+              >
+                In an era of instant gratification, we've redefined what it
+                means to shop. Our high-velocity retail model is engineered for
+                the fast-paced individual. We strip away the noise to deliver
+                ruthless efficiency without sacrificing the premium aesthetics
+                you demand.
+              </p>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant max-w-lg"
+              >
+                From our precision-engineered fabrics to our streamlined
+                logistics, every touchpoint at Shoppify is optimized for the
+                future of commerce. We don't just sell products; we provide the
+                gear for a life in motion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Join the Movement Section -->
+      <section class="w-full bg-surface-container-low py-[100px]">
+        <div class="max-w-4xl mx-auto px-margin text-center">
+          <h2
+            class="font-headline-lg text-headline-lg text-primary mb-md uppercase tracking-tighter"
+          >
+            Join the Movement
+          </h2>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant mb-xl mx-auto max-w-xl"
+          >
+            Be the first to know. Sign up for early access to our limited-run
+            drops and exclusive performance insights.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-sm max-w-xl mx-auto">
+            <input
+              class="flex-grow bg-white border-none rounded-full px-lg py-md text-body-md focus:ring-2 focus:ring-secondary-container transition-all"
+              placeholder="Enter your email"
+              required=""
+              type="email"
+            />
+            <button
+              class="bg-secondary-container hover:bg-secondary text-white font-label-sm text-label-sm px-xl py-md rounded-full uppercase tracking-widest transition-colors duration-300"
+              type="submit"
+            >
+              Subscribe
+            </button>
+          </form>
+          <p
+            class="mt-md text-xs text-on-tertiary-container uppercase tracking-widest"
+          >
+            Fast access. Zero spam. Unsubscribe anytime.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="bg-primary text-white w-full pt-24 pb-8 font-inter relative overflow-hidden"
+    >
+      <div
+        class="max-w-7xl mx-auto px-margin grid grid-cols-1 md:grid-cols-4 gap-12 mb-24 relative z-10"
+      >
+        <!-- Brand Column -->
+        <div class="flex flex-col gap-6 md:col-span-1">
+          <p class="text-white/60 text-sm leading-relaxed max-w-xs">
+            High-velocity retail engineered for speed. Premium aesthetics meet
+            ruthless efficiency.
+          </p>
+        </div>
+        <!-- Links Column 1 -->
+        <div class="flex flex-col gap-4">
+          <h4 class="font-bold text-lg mb-2">Legal</h4>
+          <a
+            class="text-white/60 hover:text-white transition-colors duration-200"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-white/60 hover:text-white transition-colors duration-200"
+            href="#"
+            >Terms of Service</a
+          >
+        </div>
+        <!-- Links Column 2 -->
+        <div class="flex flex-col gap-4">
+          <h4 class="font-bold text-lg mb-2">Support</h4>
+          <a
+            class="text-white/60 hover:text-white transition-colors duration-200"
+            href="#"
+            >Shipping Info</a
+          >
+          <a
+            class="text-white/60 hover:text-white transition-colors duration-200"
+            href="#"
+            >Returns</a
+          >
+        </div>
+        <!-- Links Column 3 -->
+        <div class="flex flex-col gap-4">
+          <h4 class="font-bold text-lg mb-2">Connect</h4>
+          <a
+            class="text-white/60 hover:text-white transition-colors duration-200"
+            href="#"
+            >Contact Us</a
+          >
+          <a
+            class="text-white/60 hover:text-white transition-colors duration-200"
+            href="#"
+            >Newsletter</a
+          >
+        </div>
+      </div>
+      <div
+        class="w-full text-center relative z-10 border-t border-white/10 pt-8 mt-12"
+      >
+        <p class="text-white/40 text-sm">
+          © 2024 Shoppify Inc. All rights reserved.
+        </p>
+      </div>
+      <!-- Massive Footer Brand Cap -->
+      <div
+        class="absolute bottom-[-10%] left-0 w-full text-center select-none pointer-events-none opacity-5 z-0"
+      >
+        <span
+          class="font-black text-[15vw] leading-none tracking-tighter text-white whitespace-nowrap"
+          >SHOPPIFY</span
+        >
+      </div>
+    </footer>
+  </body>
+</html>

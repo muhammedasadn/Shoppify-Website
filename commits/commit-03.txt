@@ -1,3 +1,0 @@
-Commit 3 - add commit-03.txt
-
-Small placeholder file for commit tracking.

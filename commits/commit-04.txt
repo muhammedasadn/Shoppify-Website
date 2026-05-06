@@ -1,3 +1,0 @@
-Commit 4 - add commit-04.txt
-
-Small placeholder file for commit tracking.
